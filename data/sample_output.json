@@ -1,0 +1,51 @@
+{
+  "_note": "This is a static, hand-verified sample output included so repo visitors can see real results without needing an API key. Running `python orchestrator.py` with your own key regenerates this live from the synthetic reports in synthetic_reports.py.",
+  "synthesis": {
+    "conflict_map": [
+      {
+        "stakeholders": ["Tom Becker", "Raj Malhotra"],
+        "issue": "Business Sponsor is holding the Nov go-live date firm while Engineering Lead's own status reports show unresolved integration issues being deflected rather than resolved.",
+        "evidence": [
+          "I need the Nov go-live date held firm regardless of what engineering says about scope.",
+          "I understand engineering wants a two-week buffer, but leadership already committed to Nov externally."
+        ]
+      },
+      {
+        "stakeholders": ["Tom Becker", "Anita Desai"],
+        "issue": "Business Sponsor treats the timeline as fixed while QA Lead privately estimates full regression will not complete before go-live and is not escalating it.",
+        "evidence": [
+          "Honestly, at this rate we won't finish full regression before go-live, but I'll let the PM decide if that's raised.",
+          "We are on track and I don't foresee any reason to move the date."
+        ]
+      }
+    ],
+    "risk_flags": [
+      {
+        "risk": "QA regression coverage may not complete before go-live, and this has not been escalated to leadership.",
+        "confidence": 0.82,
+        "source_statements": [
+          "Honestly, at this rate we won't finish full regression before go-live, but I'll let the PM decide if that's raised."
+        ],
+        "recommended_action": "Escalate current regression completion rate to the steering committee before Week 5, independent of the QA Lead's own escalation timeline."
+      },
+      {
+        "risk": "Recurring vendor/integration issues are being attributed to external systems (legacy ERP, vendor middleware) across three consecutive weeks without a joint root-cause review.",
+        "confidence": 0.68,
+        "source_statements": [
+          "The eBOM sync issue is actually related to the vendor's middleware config, not our side.",
+          "Root cause was actually a data quality issue from the legacy ERP export, not our integration layer."
+        ],
+        "recommended_action": "Convene a joint root-cause session with Engineering and the vendor before accepting further deflected attributions at face value."
+      },
+      {
+        "risk": "Budget overrun risk was explicitly deferred rather than addressed.",
+        "confidence": 0.55,
+        "source_statements": [
+          "Budget is not a concern at this stage, we'll figure out overruns later if they happen."
+        ],
+        "recommended_action": "Request an explicit budget risk assessment in the next steering committee update rather than accepting deferral."
+      }
+    ],
+    "roadmap_adjustment": "Given the accumulated signals — unresolved QA regression risk left unescalated through Week 3, two separate instances of deflected root-cause attribution from Engineering, and a Business Sponsor holding the Nov date firm without acknowledging these — the roadmap should not proceed on the current timeline without an explicit checkpoint. Recommend inserting a joint Engineering-QA-Vendor risk review before Week 5, with QA regression completion rate reported directly to the steering committee rather than routed through the QA Lead's discretion. If regression completion is below 95% at that checkpoint, the Nov go-live date should be formally reassessed with Tom Becker rather than held firm by default."
+  }
+}

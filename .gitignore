@@ -1,0 +1,10 @@
+.env
+__pycache__/
+*.pyc
+.DS_Store
+data/pipeline_output.json
+data/classified_results.json
+data/synthesis_result.json
+evals/eval_report.json
+venv/
+.venv/
