@@ -8,3 +8,7 @@ data/synthesis_result.json
 evals/eval_report.json
 venv/
 .venv/
+
+# v2: privacy-critical files -- these must NEVER be committed
+privacy/identity_mapping.json
+logs/audit_log.jsonl
