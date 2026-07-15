@@ -1,0 +1,204 @@
+{
+  "_note": "This is static, hand-verified sample/demo data (derived from the labeled synthetic reports in data/synthetic_reports.py) included so anyone visiting this live demo can see real, representative output without needing an Anthropic API key. Run `python orchestrator.py` with your own ANTHROPIC_API_KEY to regenerate this live from the classifier + synthesis agents instead of this fixed sample.",
+  "classified_statements": [
+    {
+      "stakeholder": "Raj Malhotra",
+      "role": "Engineering Lead",
+      "week": "Week 1",
+      "category": "none",
+      "confidence": 0.94,
+      "text": "Integration testing is progressing well, we expect to close out the sprint on schedule.",
+      "rationale": "Neutral, accurate status update -- no risk-language pattern detected."
+    },
+    {
+      "stakeholder": "Priya Nair",
+      "role": "Vendor PM (Implementation Partner)",
+      "week": "Week 1",
+      "category": "hedging",
+      "confidence": 0.86,
+      "text": "Data migration should be fine, we've handled similar cutovers before.",
+      "rationale": "Uses softening language that understates the actual level of risk or uncertainty."
+    },
+    {
+      "stakeholder": "Tom Becker",
+      "role": "Business Sponsor",
+      "week": "Week 1",
+      "category": "conflicting_priorities",
+      "confidence": 0.93,
+      "text": "I need the Nov go-live date held firm regardless of what engineering says about scope.",
+      "rationale": "States a requirement that directly conflicts with another stakeholder's stated need or constraint."
+    },
+    {
+      "stakeholder": "Anita Desai",
+      "role": "QA Lead",
+      "week": "Week 1",
+      "category": "hedging",
+      "confidence": 0.86,
+      "text": "Test coverage is mostly on track, a few edge cases still pending review.",
+      "rationale": "Uses softening language that understates the actual level of risk or uncertainty."
+    },
+    {
+      "stakeholder": "Raj Malhotra",
+      "role": "Engineering Lead",
+      "week": "Week 2",
+      "category": "deflection",
+      "confidence": 0.89,
+      "text": "The eBOM sync issue is actually related to the vendor's middleware config, not our side.",
+      "rationale": "Shifts responsibility for the issue onto another team or vendor rather than owning it."
+    },
+    {
+      "stakeholder": "Priya Nair",
+      "role": "Vendor PM (Implementation Partner)",
+      "week": "Week 2",
+      "category": "over_confidence",
+      "confidence": 0.91,
+      "text": "We're confident the migration will complete without any downtime this time.",
+      "rationale": "Expresses unrealistic certainty despite known blockers or unresolved risk factors."
+    },
+    {
+      "stakeholder": "Tom Becker",
+      "role": "Business Sponsor",
+      "week": "Week 1",
+      "category": "escalation_avoidance",
+      "confidence": 0.9,
+      "text": "Budget is not a concern at this stage, we'll figure out overruns later if they happen.",
+      "rationale": "Flags a known issue internally but explicitly avoids raising it to leadership."
+    },
+    {
+      "stakeholder": "Anita Desai",
+      "role": "QA Lead",
+      "week": "Week 2",
+      "category": "escalation_avoidance",
+      "confidence": 0.9,
+      "text": "We found three P1 defects in the ECO workflow but they're being tracked internally for now.",
+      "rationale": "Flags a known issue internally but explicitly avoids raising it to leadership."
+    },
+    {
+      "stakeholder": "Raj Malhotra",
+      "role": "Engineering Lead",
+      "week": "Week 3",
+      "category": "over_confidence",
+      "confidence": 0.91,
+      "text": "We've fully resolved the sync issue and don't anticipate any further blockers.",
+      "rationale": "Expresses unrealistic certainty despite known blockers or unresolved risk factors."
+    },
+    {
+      "stakeholder": "Priya Nair",
+      "role": "Vendor PM (Implementation Partner)",
+      "week": "Week 3",
+      "category": "hedging",
+      "confidence": 0.86,
+      "text": "There were a few hiccups in the trial run, but the core team is on it, nothing major.",
+      "rationale": "Uses softening language that understates the actual level of risk or uncertainty."
+    },
+    {
+      "stakeholder": "Tom Becker",
+      "role": "Business Sponsor",
+      "week": "Week 3",
+      "category": "conflicting_priorities",
+      "confidence": 0.93,
+      "text": "I understand engineering wants a two-week buffer, but leadership already committed to Nov externally.",
+      "rationale": "States a requirement that directly conflicts with another stakeholder's stated need or constraint."
+    },
+    {
+      "stakeholder": "Anita Desai",
+      "role": "QA Lead",
+      "week": "Week 3",
+      "category": "escalation_avoidance",
+      "confidence": 0.9,
+      "text": "Honestly, at this rate we won't finish full regression before go-live, but I'll let the PM decide if that's raised.",
+      "rationale": "Flags a known issue internally but explicitly avoids raising it to leadership."
+    },
+    {
+      "stakeholder": "Raj Malhotra",
+      "role": "Engineering Lead",
+      "week": "Week 4",
+      "category": "deflection",
+      "confidence": 0.89,
+      "text": "Root cause was actually a data quality issue from the legacy ERP export, not our integration layer.",
+      "rationale": "Shifts responsibility for the issue onto another team or vendor rather than owning it."
+    },
+    {
+      "stakeholder": "Priya Nair",
+      "role": "Vendor PM (Implementation Partner)",
+      "week": "Week 4",
+      "category": "none",
+      "confidence": 0.94,
+      "text": "Migration dry-run is complete and validated end to end.",
+      "rationale": "Neutral, accurate status update -- no risk-language pattern detected."
+    },
+    {
+      "stakeholder": "Tom Becker",
+      "role": "Business Sponsor",
+      "week": "Week 4",
+      "category": "over_confidence",
+      "confidence": 0.91,
+      "text": "We are on track and I don't foresee any reason to move the date.",
+      "rationale": "Expresses unrealistic certainty despite known blockers or unresolved risk factors."
+    },
+    {
+      "stakeholder": "Anita Desai",
+      "role": "QA Lead",
+      "week": "Week 4",
+      "category": "none",
+      "confidence": 0.94,
+      "text": "Regression suite is 92% complete with a clear plan for the remaining 8%.",
+      "rationale": "Neutral, accurate status update -- no risk-language pattern detected."
+    }
+  ],
+  "synthesis": {
+    "conflict_map": [
+      {
+        "stakeholders": [
+          "Tom Becker",
+          "Raj Malhotra"
+        ],
+        "issue": "Business Sponsor is holding the Nov go-live date firm while Engineering Lead's own status reports show unresolved integration issues being deflected rather than resolved.",
+        "evidence": [
+          "I need the Nov go-live date held firm regardless of what engineering says about scope.",
+          "I understand engineering wants a two-week buffer, but leadership already committed to Nov externally."
+        ]
+      },
+      {
+        "stakeholders": [
+          "Tom Becker",
+          "Anita Desai"
+        ],
+        "issue": "Business Sponsor treats the timeline as fixed while QA Lead privately estimates full regression will not complete before go-live and is not escalating it.",
+        "evidence": [
+          "Honestly, at this rate we won't finish full regression before go-live, but I'll let the PM decide if that's raised.",
+          "We are on track and I don't foresee any reason to move the date."
+        ]
+      }
+    ],
+    "risk_flags": [
+      {
+        "risk": "QA regression coverage may not complete before go-live, and this has not been escalated to leadership.",
+        "confidence": 0.82,
+        "source_statements": [
+          "Honestly, at this rate we won't finish full regression before go-live, but I'll let the PM decide if that's raised."
+        ],
+        "recommended_action": "Escalate current regression completion rate to the steering committee before Week 5, independent of the QA Lead's own escalation timeline."
+      },
+      {
+        "risk": "Recurring vendor/integration issues are being attributed to external systems (legacy ERP, vendor middleware) across three consecutive weeks without a joint root-cause review.",
+        "confidence": 0.68,
+        "source_statements": [
+          "The eBOM sync issue is actually related to the vendor's middleware config, not our side.",
+          "Root cause was actually a data quality issue from the legacy ERP export, not our integration layer."
+        ],
+        "recommended_action": "Convene a joint root-cause session with Engineering and the vendor before accepting further deflected attributions at face value."
+      },
+      {
+        "risk": "Budget overrun risk was explicitly deferred rather than addressed.",
+        "confidence": 0.55,
+        "source_statements": [
+          "Budget is not a concern at this stage, we'll figure out overruns later if they happen."
+        ],
+        "recommended_action": "Request an explicit budget risk assessment in the next steering committee update rather than accepting deferral."
+      }
+    ],
+    "roadmap_adjustment": "Given the accumulated signals \u2014 unresolved QA regression risk left unescalated through Week 3, two separate instances of deflected root-cause attribution from Engineering, and a Business Sponsor holding the Nov date firm without acknowledging these \u2014 the roadmap should not proceed on the current timeline without an explicit checkpoint. Recommend inserting a joint Engineering-QA-Vendor risk review before Week 5, with QA regression completion rate reported directly to the steering committee rather than routed through the QA Lead's discretion. If regression completion is below 95% at that checkpoint, the Nov go-live date should be formally reassessed with Tom Becker rather than held firm by default."
+  },
+  "quarantined_statements": []
+}

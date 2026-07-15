@@ -33,6 +33,7 @@ from ingestion.source_adapters import (
 st.set_page_config(page_title="Stakeholder Sentiment & Roadmap Risk", layout="wide")
 
 DATA_PATH = os.path.join(os.path.dirname(__file__), "..", "data", "pipeline_output.json")
+DEMO_DATA_PATH = os.path.join(os.path.dirname(__file__), "..", "data", "demo_output.json")
 
 CATEGORY_COLORS = {
     "none": "#2e7d32",
@@ -46,10 +47,17 @@ CATEGORY_COLORS = {
 
 
 def load_data():
-    if not os.path.exists(DATA_PATH):
-        return None
-    with open(DATA_PATH) as f:
-        return json.load(f)
+    """Prefer a real, freshly-generated pipeline run. If none exists yet
+    (e.g. a fresh clone, or a visitor on the hosted demo without their own
+    API key), fall back to the static, hand-verified demo dataset so the
+    dashboard is never empty."""
+    if os.path.exists(DATA_PATH):
+        with open(DATA_PATH) as f:
+            return json.load(f), False
+    if os.path.exists(DEMO_DATA_PATH):
+        with open(DEMO_DATA_PATH) as f:
+            return json.load(f), True
+    return None, False
 
 
 def render_header():
@@ -277,10 +285,19 @@ def main():
 
     with tab1:
         render_header()
-        data = load_data()
+        data, is_demo = load_data()
         if not data:
             render_no_data_state()
             return
+
+        if is_demo:
+            st.info(
+                "📋 Showing static **demo data** (derived from the labeled synthetic reports "
+                "in `data/synthetic_reports.py`) so you can see real, representative output "
+                "without an API key. Head to the **Add Data** tab to run the live pipeline "
+                "on your own input with your own `ANTHROPIC_API_KEY`.",
+                icon="ℹ️",
+            )
 
         classified = data.get("classified_statements", [])
         synthesis = data.get("synthesis", {})
